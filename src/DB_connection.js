@@ -5,8 +5,8 @@ const FavoriteModel = require("./models/Favorite");
 const UserModel = require("./models/User");
 
 const sequelize = new Sequelize(
-	"postgresql://postgres:5AFBeBB5-e22c5eDCbf3-d2Fa3**a3g2@roundhouse.proxy.rlwy.net:14304/railway",
-	{ logging: false, native: false }
+  "postgresql://postgres:5AFBeBB5-e22c5eDCbf3-d2Fa3**a3g2@roundhouse.proxy.rlwy.net:14304/railway",
+  { logging: false, native: false }
 );
 
 FavoriteModel(sequelize);
@@ -17,7 +17,8 @@ User.belongsToMany(Favorite, { through: "user_favorite" });
 Favorite.belongsToMany(User, { through: "user_favorite" });
 
 module.exports = {
-	User,
-	Favorite,
-	conn: sequelize,
+  User,
+  Favorite,
+  user_favorite,
+  conn: sequelize,
 };
