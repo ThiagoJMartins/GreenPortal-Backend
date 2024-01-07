@@ -12,8 +12,8 @@ FavoriteModel(sequelize);
 UserModel(sequelize);
 
 const { User, Favorite } = sequelize.models;
-User.belongsToMany(Favorite, { through: "UserFavs" });
-Favorite.belongsToMany(User, { through: "UserFavs" });
+User.belongsToMany(Favorite, { through: UserFavs });
+Favorite.belongsToMany(User, { through: UserFavs });
 
 module.exports = {
   User,
